@@ -1,0 +1,11 @@
+*.log
+*.exe
+*.exe~
+*.test
+debug
+.vscode
+.idea/
+main
+connextpaasapi
+common/initdb.go
+.DS_Store
