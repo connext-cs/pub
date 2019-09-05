@@ -75,8 +75,11 @@ func InitDB() (err error) {
 }
 
 func GetDB() *sqlx.DB {
-	if db == nil {
-		InitDB()
+	fmt.Printf("start init db")
+	err := InitDB()
+	if err != nil {
+		fmt.Printf("init db error: %v", err)
 	}
+
 	return db
 }
