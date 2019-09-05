@@ -17,25 +17,25 @@ var (
 	database *config.Database
 )
 
-func DbConfigSet(outdb *config.Database) {
-	database = new(config.Database)
-	database.Host = outdb.Host
-	database.Port = outdb.Port
-	database.User = outdb.User
-	database.Password = outdb.Password
-	database.Name = outdb.Name
-	fmt.Println("paasdb DbConfigSet, database:",database)
-}
-
-func init() {
-	database = new(config.Database)
-	database.Host = "127.0.0.1"
-	database.Port = 3306
-	database.Name = "cloudproject"
-	database.User = "connextpaas"
-	database.Password = "connext@0101"
-	fmt.Println("paasdb init database:",database)
-}
+//func DbConfigSet(outdb *config.Database) {
+//	database = new(config.Database)
+//	database.Host = outdb.Host
+//	database.Port = outdb.Port
+//	database.User = outdb.User
+//	database.Password = outdb.Password
+//	database.Name = outdb.Name
+//	fmt.Println("paasdb DbConfigSet, database:",database)
+//}
+//
+//func init() {
+//	database = new(config.Database)
+//	database.Host = config.CMysqlHost()
+//	database.Port = uint16(config.CMysqlPort())
+//	database.Name = config.CCloudMysqlDatabase()
+//	database.User = config.CMysqlUserName()
+//	database.Password = config.CMysqlPasswd()
+//	fmt.Println("paasdb init database:", database)
+//}
 
 // InitDB init global db loc=Local&
 func InitDB() (err error) {

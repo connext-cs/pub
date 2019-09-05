@@ -3,7 +3,7 @@ package consulops
 import (
 	"errors"
 	"path"
-	proconfig "github.com/connext-cs/protocol/config"
+	proconfig "github.com/connext-cs/pub/config"
 	zhcnx "github.com/connext-cs/pub/zhlog"
 
 	"github.com/hashicorp/consul/api"
