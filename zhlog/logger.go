@@ -47,7 +47,7 @@ func Error(traceID, msg string, args ...interface{}) {
 //Log output message. prefix is added to every single line of log
 //output for tracing purpose.
 func Log(traceID, msg string, args ...interface{}) {
-	log(traceID, msg, args...)
+	log(traceID, "[INFO]"+msg, args...)
 }
 
 func Dbg(msg string, args ...interface{}) {
