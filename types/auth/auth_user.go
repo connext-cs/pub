@@ -15,7 +15,7 @@ const (
 )
 
 type AuthUsers struct {
-	Id               string            `json:"user_id"`
+	Id               int64             `json:"user_id"`
 	UserType         int               `json:"user_type" xorm:"-"`
 	UserName         string            `json:"user_name"`
 	Passwd           string            `json:"-"`
