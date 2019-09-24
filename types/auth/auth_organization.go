@@ -10,4 +10,6 @@ const (
 	OrganizationTypeSumCompany
 	//部门
 	OrganizationTypeDepartment
+	//团队
+	OrganizationTypeTeam
 )
