@@ -29,6 +29,7 @@ type AuthUsers struct {
 	OrganizationName string            `json:"-"`
 	Ldapdn           string            `json:"-"`
 	Deleted          int               `json:"-"`
+	Enabled          int               `json:"-"`
 	CreatedBy        string            `json:"-"`
 	CreatedTime      jsontime.JsonTime `json:"create_time" xorm:"created"`
 	UpdatedBy        string            `json:"-"`
