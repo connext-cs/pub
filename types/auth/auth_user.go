@@ -1,12 +1,16 @@
-package types
+package auth
 
 import (
 	"github.com/connext-cs/pub/jsontime"
 )
 
+//用户类型
 const (
+	//超级管理员
 	UserTypeSuperAdmin = iota
+	//普通用户
 	UserTypeCustom
+	//LDAP用户
 	UserTypeLdap
 )
 

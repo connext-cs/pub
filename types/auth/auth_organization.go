@@ -1,4 +1,4 @@
-package types
+package auth
 
 //组织类型
 const (
