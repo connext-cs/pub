@@ -24,7 +24,7 @@ type AuthUsers struct {
 	Status           int               `json:"status"`
 	Email            string            `json:"email"`
 	OrganizationId   string            `json:"-"`
-	OrganizationName string            `json:"position"`
+	OrganizationName string            `json:"-"`
 	Ldapdn           string            `json:"-"`
 	Deleted          int               `json:"-"`
 	CreatedBy        string            `json:"-"`
@@ -32,3 +32,4 @@ type AuthUsers struct {
 	UpdatedBy        string            `json:"-"`
 	UpdatedTime      jsontime.JsonTime `json:"-" xorm:"updated"`
 }
+
