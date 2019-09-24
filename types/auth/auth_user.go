@@ -16,13 +16,15 @@ const (
 
 type AuthUsers struct {
 	Id               string            `json:"user_id"`
-	Type             int               `json:"user_type" xorm:"-"`
+	UserType         int               `json:"user_type" xorm:"-"`
 	UserName         string            `json:"user_name"`
+	Passwd           string            `json:"-"`
 	NickName         string            `json:"nick_name"`
 	Phone            string            `json:"phone"`
 	Position         string            `json:"position" xorm:"-"`
 	Status           int               `json:"status"`
 	Email            string            `json:"email"`
+	Salt             string            `json:"-"`
 	OrganizationId   string            `json:"-"`
 	OrganizationName string            `json:"-"`
 	Ldapdn           string            `json:"-"`
@@ -32,4 +34,3 @@ type AuthUsers struct {
 	UpdatedBy        string            `json:"-"`
 	UpdatedTime      jsontime.JsonTime `json:"-" xorm:"updated"`
 }
-
