@@ -23,7 +23,7 @@ type AuthUsers struct {
 	Position         string            `json:"position" xorm:"-"`
 	Status           int               `json:"status"`
 	Email            string            `json:"email"`
-	OrganizationID   string            `json:"-"`
+	OrganizationId   string            `json:"-"`
 	OrganizationName string            `json:"position"`
 	Ldapdn           string            `json:"-"`
 	Deleted          int               `json:"-"`
