@@ -17,17 +17,18 @@ const (
 
 func GenerateServiceIdentities(service, length int)(identities []int64, err error) {
 	worker, err := NewNode(int64(service))
-	ch := make(chan int64)
-	for i := 0; i < length; i++ {
-		go func() {
-			id := worker.Generate()
-			ch <- id
-		}()
-	}
+	// ch := make(chan int64)
 	identities = make([]int64, 0)
 	for i := 0; i < length; i++ {
-		id := <-ch
-		identities = append(identities, id)
+		// go func() {
+			id := worker.Generate()
+			identities = append(identities, id)
+			// ch <- id
+		// }()
 	}
+	// for i := 0; i < length; i++ {
+	// 	id := <-ch
+	// 	identities = append(identities, id)
+	// }
 	return
 }
