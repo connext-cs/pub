@@ -1,12 +1,12 @@
 package email
 
 import (
-	"k8sproject/config"
+	// "k8sproject/config"
+	"github.com/connext-cs/pub/config"
 	"fmt"
 	"net"
 	"net/smtp"
 	"strings"
-	"k8sproject/plugin/log"	
 )
 
 type MailInfo struct {
@@ -59,12 +59,8 @@ func (a *loginAuth) Next(fromServer []byte, more bool) ([]byte, error) {
 }
 
 func (mailInfo *MailInfo) InitHostInfo() {
-	// mailInfo.SetServer("smtp.office365.com", "587")
-	// mailInfo.SetUser("xiang.pan@connext.com.cn", "Px@1234cn")
-	// mailInfo.title = "defaultTitle"
-	mailInfo.SetServer(config.GetConfig().SonarEMail.Host, config.GetConfig().SonarEMail.GetPort())
-	mailInfo.SetUser(config.GetConfig().SonarEMail.User, config.GetConfig().SonarEMail.Password)
-	mailInfo.title = config.GetConfig().SonarEMail.DefaultTitle
+	mailInfo.SetServer(config.CVMSonarEMailHost(), fmt.Sprintf("%d", config.CVMSonarEMailPort()))
+	mailInfo.SetUser(config.CVMSonarEMailUser(), config.CVMSonarEMailPassword())
 }
 
 func (mailInfo *MailInfo) SetTitle(title string) {
@@ -80,7 +76,7 @@ func (mailInfo *MailInfo) AddContent(contentLine string) {
 }
 
 func (mailInfo *MailInfo) SendMail(receiveAddr string) error {
-	log.Info("receiveAddr:%+v,mailInfo:%+v", receiveAddr, mailInfo)
+	// log.Info("receiveAddr:%+v,mailInfo:%+v", receiveAddr, mailInfo)
 	//mailInfo.InitHostInfo()
 	err := mailInfo.send(receiveAddr)
 	if err != nil {
