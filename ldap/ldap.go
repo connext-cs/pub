@@ -31,13 +31,13 @@ func LdapInit() (*ldap.Conn, error) {
 	return ldap.Dial("tcp", fmt.Sprintf("%s:%d", host, port))
 }
 
-func GetUserList() ([]User, error) {
+func GetUserList() ([]*User, error) {
 	searchdn := config.CLdapSearchdn()
 	return userList(searchdn)
 }
-func userList(searchdn string) ([]User, error) {
+func userList(searchdn string) ([]*User, error) {
 	user := new(User)
-	users := make([]User, 0)
+	users := make([]*User, 0)
 	l, err := LdapInit()
 	defer l.Close()
 	if err != nil {
@@ -68,7 +68,7 @@ func userList(searchdn string) ([]User, error) {
 		user.Uid = v.GetAttributeValue("uidNumber")
 		user.Gid = v.GetAttributeValue("gidNumber")
 		user.Dn = v.DN
-		users = append(users, *user)
+		users = append(users, user)
 	}
 
 	return users, nil
