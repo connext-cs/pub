@@ -36,7 +36,6 @@ func GetUserList() ([]*User, error) {
 	return userList(searchdn)
 }
 func userList(searchdn string) ([]*User, error) {
-	user := new(User)
 	users := make([]*User, 0)
 	l, err := LdapInit()
 	defer l.Close()
@@ -64,6 +63,7 @@ func userList(searchdn string) ([]*User, error) {
 	}
 
 	for _, v := range sr.Entries {
+		user := new(User)
 		user.Cn = v.GetAttributeValue("cn")
 		user.Uid = v.GetAttributeValue("uidNumber")
 		user.Gid = v.GetAttributeValue("gidNumber")
