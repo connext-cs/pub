@@ -15,16 +15,25 @@ const (
 )
 
 type AuthUsers struct {
-	Id          string            `json:"user_id"`
-	Type        int               `json:"user_type" xorm:"-"`
-	UserName    string            `json:"user_name"`
-	NickName    string            `json:"nick_name"`
-	Phone       string            `json:"phone"`
-	Position    string            `json:"position" xorm:"-"`
-	Status      int               `json:"status"`
-	Deleted     int               `json:"-"`
-	CreatedBy   string            `json:"-"`
-	CreatedTime jsontime.JsonTime `json:"create_time" xorm:"created"`
-	UpdatedBy   string            `json:"-"`
-	UpdatedTime jsontime.JsonTime `json:"-" xorm:"updated"`
+	Id               int64             `json:"user_id"`
+	UserType         int               `json:"user_type" xorm:"-"`
+	UserName         string            `json:"user_name"`
+	Passwd           string            `json:"-"`
+	NickName         string            `json:"nick_name"`
+	Phone            string            `json:"phone"`
+	Position         string            `json:"position" xorm:"-"`
+	Status           int               `json:"status"`
+	Email            string            `json:"email"`
+	PwdNeedChange    int               `json:"-"`
+	PwdChanged       int               `json:"-"`
+	Salt             string            `json:"-"`
+	OrganizationId   string            `json:"-"`
+	OrganizationName string            `json:"-"`
+	Ldapdn           string            `json:"-"`
+	Deleted          int               `json:"-"`
+	Enabled          int               `json:"-"`
+	CreatedBy        string            `json:"-"`
+	CreatedTime      jsontime.JsonTime `json:"create_time" xorm:"created"`
+	UpdatedBy        string            `json:"-"`
+	UpdatedTime      jsontime.JsonTime `json:"-" xorm:"updated"`
 }

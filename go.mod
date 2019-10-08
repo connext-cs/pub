@@ -22,6 +22,7 @@ require (
 	github.com/tidwall/gjson v1.3.2
 	go.etcd.io/bbolt v1.3.3 // indirect
 	go.etcd.io/etcd v3.3.13+incompatible
+	gopkg.in/ldap.v3 v3.0.3
 	gotest.tools v2.2.0+incompatible
 	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
 )
