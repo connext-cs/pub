@@ -1,10 +1,11 @@
 package paasdb
 
 import (
-	"github.com/connext-cs/pub/logs"
 	"errors"
-	"github.com/connext-cs/pub/config"
 	"strconv"
+
+	"github.com/connext-cs/pub/config"
+	"github.com/connext-cs/pub/logs"
 
 	"github.com/go-xorm/xorm"
 )

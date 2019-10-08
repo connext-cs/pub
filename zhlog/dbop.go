@@ -1,10 +1,14 @@
-package main
+package zhlog
 
 import (
 	"fmt"
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/connext-cs/pub/paasdb"
+
+	"github.com/go-xorm/xorm"
 )
 
 // SLog 日志表
@@ -25,6 +29,16 @@ type SLog struct {
 	Deleted       int       `json:"deleted"`         //删除标志
 	CreatedBy     string    `json:"created_by"`      //创建人
 	CreatedTime   time.Time `json:"created_time"`    //创建时间
+}
+
+func getSession() (session *xorm.Session) {
+	orm := paasdb.CloudprojectEngine()
+	orm.ShowSQL(false)
+	session = orm.NewSession()
+	defer session.Close()
+	err := session.Begin()
+	Assert(err)
+	return
 }
 
 // ErrorToDB Error log inTo DB
