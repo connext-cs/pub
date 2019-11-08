@@ -571,3 +571,11 @@ func CKibanaAddrExternal() string {
 func SuperPassword() string {
 	return cStr("super_password", dSuperPassword)
 }
+
+func TerraformPath() string {
+	return cStr("terraform_path", "")
+}
+
+func TerraformTPLPath() string {
+	return cStr("terraform_tpl_path", "")
+}
