@@ -116,8 +116,9 @@ const (
 	dSonarPassword   = ""
 	dwarURL          = ""
 
-	dConsulHost = ""
-	dConsulPort = 0
+	dConsulHost     = ""
+	dConsulPort     = 0
+	dToolServerHost = ""
 
 	//dAgentInstallCMD           string = ""
 	dLinuxAgentInstallCMD        string = ""
@@ -578,4 +579,8 @@ func TerraformPath() string {
 
 func TerraformTPLPath() string {
 	return cStr("terraform_tpl_path", "")
+}
+
+func CToolServerHost() string {
+	return cStr("tool_server_host", dToolServerHost)
 }
